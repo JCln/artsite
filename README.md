@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # AGuitar
 
@@ -31,3 +32,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 # A-Guitar-As
 
 > > > > > > > origin/master
+=======
+# artsite
+art site for hrmasahi
+>>>>>>> f8ea49cede63f0178c3c86f86d014331a4569eb8
