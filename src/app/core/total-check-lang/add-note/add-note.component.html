@@ -1,0 +1,119 @@
+<div class="fixed-image-notes">
+  <!-- <div class="body"> -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div style="font-size: 2.2rem; margin: 5rem 2rem 3rem 2rem;" class="text-primary">
+        <i class="fa fa-tasks"></i>{{ variable.checkTotalLangV ? 'آموزش' : 'learn' }}</div>
+    </div>
+  </div>
+
+  <!-- <div class="container">
+      <div class="row">
+
+        <div class="justify-content-center" *ngFor="let musicnotes of musicNotes; trackBy: trackByFn">
+
+          <div class="text-primary">{{musicnotes.level}}
+            <hr>
+          </div>
+          <div class="justify-content-center">
+            <div class="justify-content-center col-sm-12 col-md-4 col-lg-3 float-left" style="margin-bottom: 3rem;"
+              *ngFor="let note of musicnotes.notes; let i = index">
+
+              <div class="element">
+                <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)"
+                  src={{note.src}} alt="Card image">
+
+                <button *ngIf="!variable.checkTotalLangV" class="btn btn-primary middle" data-toggle='modal'
+                  data-target="#exModal">{{note.isFree ? 'Download' : 'Complete the purchase'}}</button>
+                <button *ngIf="variable.checkTotalLangV" class="btn btn-primary middle" data-toggle='modal' data-target="#exModal">{{note.isFree
+                  ? 'دانلود': 'تکمیل خرید'}}</button>
+              </div>
+
+
+              <div class="justify-content-center">
+                <h4 style="text-align: left; float: left">
+                  <span *ngIf="variable.checkTotalLangV" class="badge badge-dark">{{note.isFree ? free : sale}}</span>
+                  <span *ngIf="!variable.checkTotalLangV" class="badge badge-danger">{{note.isFree ? 'free' :
+                    'sale'}}</span>
+                </h4>
+                <h5 style="text-align: right">
+                  <span class="badge badge-danger">{{i+1}}</span>
+                </h5>
+              </div>
+
+              <div *ngIf="!variable.checkTotalLangV" class="card-body bg-danger text-white">
+                <p class="card-text">Some text.</p>
+              </div>
+
+              <div *ngIf="variable.checkTotalLangV" class="card-body bg-dark text-white">
+                <p class="card-text" style="text-align: right">متن آزمایشی</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div> -->
+
+
+
+  <div class="container">
+    <!-- <div class="row"> -->
+
+
+    <cdk-virtual-scroll-viewport itemSize="150" style = "height: 38.3rem;">
+      <div *cdkVirtualFor="let nothing of nothing; let i = index; let musicLevel of musicNotes" class="col-sm-12 col-md-4 col-lg-3" style="  float: left; margin: 2rem 0; justify-content: center;">
+          <div class="text-primary">{{musicLevel.level}}
+            <hr>
+          </div>
+
+        <div class="element">
+          <img class="card-img-top position-relative float-left" class="image" (error)="ImgErrorHandler($event)" src="{{nothing.src}}"
+            alt="Card image">
+
+          <button *ngIf="!variable.checkTotalLangV" class="btn btn-primary middle" data-toggle='modal' data-target="#exModal">{{nothing.isFree
+            ? 'Download' : 'Complete the purchase'}}</button>
+          <button *ngIf="variable.checkTotalLangV" class="btn btn-primary middle" data-toggle='modal' data-target="#exModal">{{nothing.isFree
+            ? 'دانلود': 'تکمیل خرید'}}</button>
+        </div>
+
+
+        <div class="justify-content-center">
+          <h4 style="text-align: left; float: left">
+            <span *ngIf="variable.checkTotalLangV" class="badge badge-dark">{{nothing.isFree ? free : sale}}</span>
+            <span *ngIf="!variable.checkTotalLangV" class="badge badge-danger">{{nothing.isFree ? 'free' :
+              'sale'}}</span>
+          </h4>
+          <h5 style="text-align: right">
+            <span class="badge badge-danger">{{i+1}}</span>
+          </h5>
+        </div>
+
+        <div *ngIf="!variable.checkTotalLangV" class="card-body bg-danger text-white">
+          <p class="card-text">Some text.</p>
+        </div>
+
+        <div *ngIf="variable.checkTotalLangV" class="card-body bg-dark text-white">
+          <p class="card-text" style="text-align: right">متن آزمایشی</p>
+        </div>
+
+
+      </div>
+    </cdk-virtual-scroll-viewport>
+    <!-- </div> -->
+  </div>
+
+</div> <!-- inside fixed image-->
+<!-- </div> -->
+<!-- <h3>whyy</h3> -->
+<!-- <div class="row">
+      <div class="col-md-12">
+        <cdk-virtual-scroll-viewport class="example-viewport" [itemSize]="50">
+          <div class="example-item" *cdkVirtualFor="let n of scrollItems">Item {{n}}</div>
+        </cdk-virtual-scroll-viewport>
+      </div> -->
+
+
+<!-- </div>
+  </div> -->

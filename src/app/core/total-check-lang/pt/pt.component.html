@@ -1,0 +1,79 @@
+<div class="body" style="background-color:bisque">
+  <fa name='vog' animation='spin'></fa>
+  <span class="glyphicon glyphicon-stats bg-info"></span>
+  <div class="row">
+    <i class="fa fa-home bg-danger">3</i><br><hr>
+
+    <i class="fa fa-address-book">d</i>
+    <br>
+    <fa name='vog' animation='spin'></fa>
+  </div>
+<div id="content">
+  <h1>Timeline (Saira + Chivo Fonts)</h1>
+
+  <ul class="timeline">
+    <li class="event" data-date="65Million B.C.">
+      <h3>Dinosaurs Roamed the Earth</h3>
+      <p>RAWWWWWWRRR.</p>
+    </li>
+    <li class="event" data-date="2005">
+      <h3>Creative Component Launched</h3>
+      <p>Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum.</p>
+    </li>
+    <li class="event" data-date="2009">
+      <h3>Squareflair was Born</h3>
+      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.</p> <p>Get ready!</p>
+    </li>
+    <li class="event" data-date="January 24, 2018">
+      <h3>Squareflair Today</h3>
+      <p>Our success can be measured by lives changed and enhanced by more than eight years of Squarespace-focused service.</p>
+    </li>
+  </ul>
+</div>
+</div>
+<div>
+  <h2>WOOOOWW</h2>
+  <h1>Gooey Menu</h1>
+<h2>Using CSS and SVG Filters</h2>
+<h3>By <a href="https://codepen.io/lbebber">Lucas Bebber</a></h3>
+<h4><a href="https://codepen.io/lbebber/pen/LELBEo" target="_blank">Version 1</a> - <a href="https://codepen.io/lbebber/pen/RNgBPP" target="_blank">Version 2</a> - Version 3 - <a href="https://codepen.io/lbebber/pen/rawQKR" target="_blank">Version 4</a></h4>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+
+
+</nav>
+
+
+<!-- filters -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
+</div>
