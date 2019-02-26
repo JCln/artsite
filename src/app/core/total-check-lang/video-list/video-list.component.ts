@@ -1,18 +1,13 @@
-import { catchError } from "rxjs/operators";
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  Input,
-  AfterViewInit,
-  OnDestroy
-} from "@angular/core";
-import { Tvideos } from "./videos";
-import { GVariables } from "../gvariables";
+import { HttpClient } from '@angular/common/http';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { config, Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
-import { CommonService } from "./../../../common.service";
-declare let videoJs: any;
+import { GVariables } from '../gvariables';
+import { CommonService } from './../../../common.service';
+import { Tvideos } from './videos';
+
+
 
 @Component({
   selector: "app-video-list",
@@ -23,51 +18,40 @@ export class VideoListComponent implements OnInit, AfterViewInit, OnDestroy {
   checkTotalLangV: boolean;
 
   id: string;
-  private videoJSplayer: any;
 
   videolist: any[] = Tvideos;
   free = "رایگان";
   sale = "خرید";
 
-  Repdata;
-  valbutton = "save";
+  config = {
+    userName: 'yourusername',
+    password: 'yourpassword',
+    server: 'yourserver.database.windows.net',
+    // If you are on Microsoft Azure, you need this:
+    options: {encrypt: true, database: 'AdventureWorks'}
+};
 
-  videooo = [
-    "https://www.aparat.com/video/video/embed/videohash/zZA7B/vt/frame"
-  ];
 
   constructor(
-    protected variable: GVariables,
-    private commonService: CommonService
+    public variable: GVariables,
+    private commonService: CommonService,
+    private httpclient: HttpClient
   ) {}
 
   ngAfterViewInit() {
-    // this.videoJSplayer = videoJs(document.getElementById('video_player_id'), {} , function() {
-    // this.video
-    // });
   }
 
-  ngOnDestroy() {
-    // console.log('Deinit - Destroyed Component');
-    // this.videoJSplayer.dispose();
-  }
+  ngOnDestroy() {}
 
   ngOnInit() {
+    console.log(this.get());
+
     try {
       this.videolist = Tvideos;
-      // this.commonService.getUser().subscribe(data => (this.Repdata = data).catchError(console.log(data)));
     } catch (e) {
       console.log(e);
     }
   }
-  // onSave = function (user, isValid: boolean) {
-  //   user.mode = this.valbutton;
-  //   this.CommonService.saveUser(user)
-  //   .subscribe(data => alert(data.data));
-  //   this.ngOnInit();
-  // } , error => this.errorMassage = error );
-  // };
-
   edit = function(kk) {
     this.id = kk._id;
     this.name = kk.name;
@@ -97,4 +81,27 @@ export class VideoListComponent implements OnInit, AfterViewInit, OnDestroy {
   addOrRemoveVideos() {
     document.getElementById("surprise").innerHTML = "";
   }
+  get(): Observable<any> {
+    return this.httpclient.get('http://81.90.148.25/Auth/account/login').pipe(
+
+        catchError(this.handleError(`get`))
+      );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+     return (error: any): Observable<T> => {
+
+      console.error(error);
+
+      // this.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+     };
+   }
+
 }
+
+// let addIframeSrc = () => {
+//   const add = document.getElementById('').innerHTML;
+
+// };

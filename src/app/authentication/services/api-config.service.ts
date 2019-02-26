@@ -1,10 +1,10 @@
-import { HttpClient } from "@angular/common/http";
-import { Inject, Injectable, Injector } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable, Injector } from '@angular/core';
 
-import { APP_CONFIG, IAppConfig } from "./app.config";
+import { APP_CONFIG, IAppConfig } from './app.config';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ApiConfigService {
   private config: IApiConfig | null = null;
@@ -24,7 +24,7 @@ export class ApiConfigService {
       .toPromise()
       .then(config => {
         this.config = config;
-        console.log("ApiConfig", this.config);
+        console.log('ApiConfig', this.config);
       })
       .catch(err => {
         console.error(
@@ -38,7 +38,7 @@ export class ApiConfigService {
   get configuration(): IApiConfig {
     if (!this.config) {
       throw new Error(
-        "Attempted to access configuration property before configuration data was loaded."
+        'Attempted to access configuration property before configuration data was loaded.'
       );
     }
     return this.config;

@@ -1,76 +1,47 @@
-<div data-target="#Events" data-spy="scroll">
+<!-- <div data-target="#Events" data-spy="scroll"> -->
 
-  <nav class="navbar navbar-expand-md bg-secondary navbar-dark fixed-top">
+<nav class="navbar bg-dark navbar-dark fixed-top">
+
+  <a class="navbar-brand justify-content-sm-center" [routerLink]="['/WPage']">
+    <img src="../../../assets/siteLogo2.jpg" id="brand-logo" style="cursor: pointer;">
+  </a>
 
 
-    <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div *ngIf="!variable.checkTotalLangV; else changeLang" class="collapse navbar-collapse" id="collapsibleNavbar">
 
-    <div *ngIf="!variable.checkTotalLangV; else changeLang" class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav navbar-nav" id="changeLangTransition">
 
-      <ul class="nav navbar-nav" id="changeLangTransition">
+      <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" (click)="logout()">Logoff [{{displayName}}]</a>
+      </li>
 
-        <a class="navbar-brand" [routerLink]="['/WPage']">
-          <img src="../../../assets/siteLogo2.jpg" id="brand-logo" style="cursor: pointer;">
-        </a>
-        <li *ngIf="authService.isLoggedIn()" class="nav-item" routerLinkActive="active">
-          <a class="nav-link" (click)="logOut()">{{authService.currentUser.userName}}</a>
+    </ul>
+  </div>
+
+  <!-- for persian language -->
+  <ng-template #changeLang>
+    <div class="collapse navbar-collapse  flex-row-reverse" id="collapsibleNavbar">
+      <ul class="nav navbar-nav flex-row-reverse">
+
+        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" (click)="logout()">Logoff [{{displayName}}]</a>
         </li>
 
       </ul>
+
     </div>
 
-    <!-- for persian language -->
-    <ng-template #changeLang>
-      <div class="collapse navbar-collapse  flex-row-reverse" id="collapsibleNavbar">
-        <ul class="nav navbar-nav flex-row-reverse">
 
-          <a class="navbar-brand" [routerLink]="['/WPage']">
-            <img src="../../../assets/siteLogo2.jpg" id="brand-logo" style="cursor: pointer;">
-          </a>
+  </ng-template>
 
-          <!-- <li role="menuitem" class="nav-item">
-            <a class="nav-link" routerLink= "/WPage" href="WPage#Events">تازه‌ها</a>
-          </li> -->
+  <div class="btn btn-dark small-swtich-icon">
+    <span class="switch switch-sm">
+      <label for="switch-sm" style="font-size: .8rem">English</label>
+      <input type="checkbox" class="switch" id="switch-sm" (click)=checkLang()>
+      <label for="switch-sm">فارسی</label>
+    </span>
+  </div>
 
-          <!-- <li role="menuitem" class="nav-item">
-            <a class="nav-link" routerLinkActive="active" href="WPage#PracticeVideos">آموزش ویدیویی</a>
-          </li> -->
+</nav>
 
-          <!-- <li role="menuitem" class="nav-item">
-            <a class="nav-link" routerLinkActive="active" href="WPage#GuitarHistory">تاریخچه گیتار</a>
-          </li> -->
-          <li *ngIf="authService.isLoggedIn()" class="nav-item" routerLinkActive="active">
-            <a class="nav-link" (click)="logOut()">{{authService.currentUser.userName}}</a>
-          </li>
-
-        </ul>
-
-        <!-- <ul class="nav navbar-nav navbar-right">
-          <li *ngIf="authService.isLoggedIn()">
-            <a>Welcome {{ authService.currentUser.userName }}</a>
-          </li>
-          <li *ngIf="!authService.isLoggedIn()">
-            <a [routerLink]="['/login']">Log In</a>
-          </li>
-          <li *ngIf="authService.isLoggedIn()">
-            <a (click)="logOut()">Log Out</a>
-          </li>
-        </ul> -->
-      </div>
-
-
-    </ng-template>
-
-    <div class="btn btn-dark ">
-      <span class="switch switch-sm font-family-class">
-        <label for="switch-sm">English</label>
-        <input type="checkbox" class="switch" id="switch-sm" (click)=checkLang()>
-        <label for="switch-sm">فارسی</label>
-      </span>
-    </div>
-
-  </nav>
-
-</div>
+<!-- </div> -->

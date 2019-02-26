@@ -1,22 +1,32 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+
+import { GVariables } from './../total-check-lang/gvariables';
+import { TotalCheckLangComponent } from './../total-check-lang/total-check-lang.component';
 
 @Component({
   selector: "app-sidenav",
   templateUrl: "./sidenav.component.html",
   styleUrls: ["./sidenav.component.css"]
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent extends TotalCheckLangComponent implements OnInit {
   show = false;
 
-  toggle() {
-    this.show = !this.show;
-    // const that = this;
-    // setTimeout(function() {
-    // that.parentNode.style.flex = 'auto';
-    // that.parentNode.style['max-width'] = 'none';
-    // }, 2000);
+  scrollTopListener: () => void;
+  closeNav: () => void;
+
+  constructor(public variable: GVariables) {
+    super();
+  }
+  ngOnInit() {}
+
+  openNav() {
+    document.getElementById("mySidebar").style.width = "25%";
+    const windowSize = screen.width;
+    if (windowSize <= 890) {
+      document.getElementById("mySidebar").style.width = "100%";
+    }
+
+    document.getElementById("button-toggler").style.marginTop = "-8rem";
   }
 
-  ngOnInit() {}
 }

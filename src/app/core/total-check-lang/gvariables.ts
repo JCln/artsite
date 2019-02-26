@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class GVariables {
@@ -7,9 +7,5 @@ export class GVariables {
 
   changeLang() {
     return (this.checkTotalLangV = !this.checkTotalLangV);
-  }
-
-  changeColor(): boolean {
-    return (this.colorSwitcher = !this.colorSwitcher);
   }
 }

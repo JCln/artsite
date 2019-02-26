@@ -1,15 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/internal/Subscription';
 
-import { Subscription } from "rxjs/internal/Subscription";
-import { GVariables } from "../gvariables";
-import { AuthService } from "./../../../authentication/services/auth.service";
+import { GVariables } from '../gvariables';
+import { AuthService } from './../../../authentication/services/auth.service';
+import { TotalCheckLangComponent } from './../total-check-lang.component';
 
 @Component({
   selector: "app-wpage",
   templateUrl: "./wpage.component.html",
-  styleUrls: ["./wpage.component.css"]
+  styleUrls: ["./wpage.component.css", "./wpage.scss"]
 })
-export class WPageComponent implements OnInit {
+export class WPageComponent extends TotalCheckLangComponent implements OnInit , TotalCheckLangComponent {
   title = "Art";
   checkTotalLangV: boolean;
 
@@ -19,7 +20,17 @@ export class WPageComponent implements OnInit {
   subscription: Subscription;
   displayName: string;
 
+  scrollTopListener: () => void;
+  closeNav: () => void;
+
+  loadPreImg(): void {
+    throw new Error("Method not implemented.");
+  }
+
+
+
   constructor(private authService: AuthService, public variable: GVariables) {
+    super();
     this.checkTotalLangV = variable.checkTotalLangV;
   }
 

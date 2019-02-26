@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -7,17 +7,17 @@ import {
   Data,
   Route,
   Router,
-  RouterStateSnapshot
-} from "@angular/router";
+  RouterStateSnapshot,
+} from '@angular/router';
 
-import { AuthGuardPermission } from "../../core/models/auth-guard-permission";
-import { AuthService } from "./auth.service";
+import { AuthGuardPermission } from '../../core/models/auth-guard-permission';
+import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
-  private permissionObjectKey = "permission";
+  private permissionObjectKey = 'permission';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -73,7 +73,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       Array.isArray(permissionData.permittedRoles)
     ) {
       throw new Error(
-        "Don't set both 'deniedRoles' and 'permittedRoles' in route data."
+        'Don\'t set both \'deniedRoles\' and \'permittedRoles\' in route data.'
       );
     }
 
@@ -105,7 +105,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   private showAccessDenied(returnUrl: string) {
-    this.router.navigate(["/accessDenied"], {
+    this.router.navigate(['/accessDenied'], {
       queryParams: { returnUrl: returnUrl }
     });
   }

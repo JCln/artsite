@@ -1,34 +1,35 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Subscription } from "rxjs";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { AuthService } from "./../../authentication/services/auth.service";
-import { GVariables } from "./../total-check-lang/gvariables";
+import { GVariables } from '../total-check-lang/gvariables';
+import { AuthService } from './../../authentication/services/auth.service';
 
 @Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.css", "./header.component.scss"]
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css', './header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  pageTitle: "Routing Lab";
+  pageTitle: 'Routing Lab';
   checkTotalLangV: boolean;
   colorSwticher: boolean;
   isLoggedIn = false;
   subscription: Subscription | null = null;
-  displayName = "";
+  displayName = '';
+
+  constructor(private authService: AuthService, public variable: GVariables) {
+    // this.checkTotalLangV = variable.checkTotalLangV;
+
+  }
 
   ngOnInit() {
     this.subscription = this.authService.authStatus$.subscribe(status => {
       this.isLoggedIn = status;
       if (status) {
         const authUser = this.authService.getAuthUser();
-        this.displayName = authUser ? authUser.displayName : "";
+        this.displayName = authUser ? authUser.displayName : '';
       }
     });
-  }
-
-  constructor(private authService: AuthService, private variable: GVariables) {
-    // this.checkTotalLangV = variable.checkTotalLangV;
   }
 
   logout() {
@@ -48,6 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
+
 }
 
 // import { AuthService } from './../services/auth.service';

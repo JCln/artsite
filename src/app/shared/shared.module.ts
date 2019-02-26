@@ -1,7 +1,5 @@
-import { NgModule, ModuleWithProviders } from "@angular/core";
-import { CommonModule } from "@angular/common";
-
-import { SharedRoutingModule } from "./shared-routing.module";
+import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 @NgModule({
   imports: [

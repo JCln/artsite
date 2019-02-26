@@ -1,19 +1,20 @@
-import { AuthService } from "./../../authentication/services/auth.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+
+import { TokenStoreService } from './../../authentication/services/token-store.service';
 
 @Component({
-  selector: "app-protected-page",
-  templateUrl: "./protected-page.component.html",
-  styleUrls: ["./protected-page.component.css"]
+  selector: 'app-protected-page',
+  templateUrl: './protected-page.component.html',
+  styleUrls: ['./protected-page.component.css']
 })
 export class ProtectedPageComponent implements OnInit {
   decodedAccessToken: any = {};
-  accessTokenExpirationDate: Date = null;
+  accessTokenExpirationDate: Date | null = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private tokenStoreService: TokenStoreService) {}
 
   ngOnInit() {
-    // this.decodedAccessToken = this.authService.getDecodedAccessToken();
-    // this.accessTokenExpirationDate = this.authService.getAccessTokenExpirationDateUtc();
+    this.decodedAccessToken = this.tokenStoreService.getDecodedAccessToken();
+    this.accessTokenExpirationDate = this.tokenStoreService.getAccessTokenExpirationDateUtc();
   }
 }

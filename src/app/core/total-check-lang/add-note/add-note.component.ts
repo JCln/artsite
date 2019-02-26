@@ -1,13 +1,14 @@
-"use strict";
+'use strict';
+import { Component, OnInit } from '@angular/core';
 
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { TNote } from "./TNote";
-import { GVariables } from "../gvariables";
+import { GVariables } from '../gvariables';
+import { TNote } from './TNote';
+
 
 @Component({
-  selector: "app-add-note",
-  templateUrl: "./add-note.component.html",
-  styleUrls: ["./add-note.component.css"]
+  selector: 'app-add-note',
+  templateUrl: './add-note.component.html',
+  styleUrls: ['./add-note.component.css']
 })
 export class AddNoteComponent implements OnInit {
   checkTotalLangV: boolean;
@@ -15,22 +16,22 @@ export class AddNoteComponent implements OnInit {
   scrollItems: number[] = [];
   musicNotes = [];
   nothing: any = [];
-  free = "رایگان";
-  sale = "خرید";
+  free = 'رایگان';
+  sale = 'خرید';
 
-  constructor(protected variable: GVariables) {
-    for (let index = 0; index < 10000; index++) {
+  constructor(public variable: GVariables) {
+    for (let index = 0; index < 100; index++) {
       this.scrollItems.push(index);
     }
     // this.checkTotalLangV = variable.checkTotalLangV;
   }
 
   img = {
-    pasargadBank: "https://epay.bpi.ir",
-    mellatBank: "https://bill.bpm.bankmellat.ir/bpgwchannel/",
-    melliBank: "https://bmi.ir/fa/pages",
+    pasargadBank: 'https://epay.bpi.ir',
+    mellatBank: 'https://bill.bpm.bankmellat.ir/bpgwchannel/',
+    melliBank: 'https://bmi.ir/fa/pages',
     saderatBank:
-      "http://www.bsi.ir/Pages/ElectronicBank/mobilebanking/PayingBills.aspx"
+      'http://www.bsi.ir/Pages/ElectronicBank/mobilebanking/PayingBills.aspx'
   };
 
   ngOnInit() {
@@ -41,7 +42,7 @@ export class AddNoteComponent implements OnInit {
     }
   }
   checkLang() {
-    console.log("thisssss" + this.checkTotalLangV);
+    console.log('thisssss' + this.checkTotalLangV);
     this.variable.checkTotalLangV = !this.checkTotalLangV;
     this.checkTotalLangV = !this.checkTotalLangV;
     // this.changeLang.emit(this.checkTotalLangV);
@@ -56,7 +57,7 @@ export class AddNoteComponent implements OnInit {
 
   ImgErrorHandler(event) {
     try {
-      event.target.src = "../../../../assets/defaultP.png";
+      event.target.src = '../../../../assets/defaultP.png';
     } catch (e) {
       console.log(e);
     }

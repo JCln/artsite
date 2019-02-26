@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { GVariables } from "./gvariables";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: "app-total-check-lang",
@@ -7,5 +6,17 @@ import { GVariables } from "./gvariables";
   styleUrls: ["./total-check-lang.component.css"]
 })
 export class TotalCheckLangComponent implements OnInit {
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
+  scrollTopListener = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    return;
+  }
+  closeNav = () => {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("button-toggler").style.marginTop = "8rem";
+    this.scrollTopListener();
+  }
 }

@@ -1,6 +1,6 @@
-import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
 
-export let APP_CONFIG = new InjectionToken<string>("app.config");
+export let APP_CONFIG = new InjectionToken<string>('app.config');
 
 export interface IAppConfig {
   apiEndpoint: string;
@@ -8,8 +8,8 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-  apiEndpoint: "http://localhost:5000",
-  apiSettingsPath: "ApiSettings"
+  apiEndpoint: 'http://81.90.148.25/Auth/account',
+  apiSettingsPath: 'login'
 };
 
 // import { InjectionToken } from '@angular/core';
