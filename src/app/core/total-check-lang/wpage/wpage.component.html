@@ -1,0 +1,54 @@
+<!-- event section id removed -->
+<section id="Events">
+  <app-carousel></app-carousel>
+</section>
+
+
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <section id="timeline">
+
+
+        <div class="tl-item">
+          <div class="tl-bg" style="background-image: url('../../../../assets/archsketch.png')"></div>
+          <div class="tl-content">
+            <h1>
+              <a class="main-first-ALink" [routerLink]="['/videoList']" (click)=scrollTopListener()>
+                <i class="main-first-I">{{variable.checkTotalLangV ? ' اسکیس و راندو معماری' : 'Archi sketchs'}}</i>
+              </a>
+            </h1>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-bg" style="background-image: url('../../../../assets/modeSketchQ.png')"></div>
+
+          <div class="tl-content">
+            <h1 class="f3 text--accent ttu">
+              <a class="main-first-ALink" [routerLink]="['/addNote']" (click)=scrollTopListener()>
+                <i class="main-first-I">{{variable.checkTotalLangV ? 'طراحی لباس و فیگور' : 'Mode sketch'}}</i>
+              </a>
+            </h1>
+
+          </div>
+        </div>
+
+
+        <div class="tl-item">
+          <div class="tl-bg" style="background-image: url('../../../../assets/academyPortrait.jpg')"></div>
+
+          <div class="tl-content">
+            <h1 class="f3 text--accent ttu">
+              <a class="main-first-ALink" [routerLink]="['/academyPortrait']" (click)=scrollTopListener()>
+                <i class="main-first-I">{{variable.checkTotalLangV ? 'آکادمی طراحی چهره' : 'Academy portrait'}}</i>
+              </a>
+            </h1>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>

@@ -1,0 +1,119 @@
+<!-- <div data-target="#Events" data-spy="scroll"> -->
+<header>
+  <nav class="navbar bg-info navbar-expand-sm navbar-dark fixed-top" id="fixed-top">
+
+    <li style="padding: 0;" id="brandLogoId">
+      <a class="navbar-brand" [routerLink]="['/WPage']">
+        <img src="../../../assets/siteLogo2.jpg" id="brand-logo" alt="masi logo" style="cursor: pointer;" />
+      </a>
+
+
+    </li>
+    <div class="dropdown">
+
+      <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="height: 3rem ">
+        <!-- {{variable.checkTotalLangV ? 'رنگ ها' : 'Colors'}} -->
+        <img  src="../../../assets/fill-color8.png" alt="color" style="width: 2rem; height: 2rem">
+      </button>
+
+      <div class="dropdown-menu bg-light">
+        <div class="container-fluid">
+          <div class="row m-0 p-0" style="width: 8rem;">
+            <button class="dropdown-item btn" (click)="colorPickerCheck('bg-dark')" style="background-color: darkgrey;"></button>
+            <button class="dropdown-item btn" (click)="colorPickerCheck('bg-warning')" style="background-color: orange;"></button>
+          <div class="row m-0 p-0">
+            <button class="dropdown-item btn" (click)="colorPickerCheck('bg-danger')" style="background-color: darkred"></button>
+            <button class="dropdown-item btn" (click)="colorPickerCheck('bg-info')" style="background-color: lightblue"></button>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style= "height: 2.8rem">
+        <!-- <span class="navbar-toggler-icon"></span>گزینه ها -->
+        گزینه ها
+      </button>
+    <div *ngIf="!variable.checkTotalLangV; else changeLang" class="collapse navbar-collapse" id="collapsibleNavbar">
+
+      <ul class="nav navbar-nav" id="changeLangTransition">
+
+
+
+        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" (click)="logout()">Logoff [{{ displayName }}]</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/']" routerLinkActive="active">Biography</a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" nav-link" [routerLink]="['/']" routerLinkActive="active">WorkShops</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/MyStudents']" routerLinkActive="active">My Students</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Contact</a>
+        </li>
+
+
+
+      </ul>
+
+
+    </div>
+
+    <!-- for persian language -->
+    <ng-template #changeLang>
+      <div class="collapse navbar-collapse  flex-row-reverse" id="collapsibleNavbar">
+
+
+        <ul class="nav navbar-nav flex-row-reverse">
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLinkActive="active">Logoff [{{ displayName }}]</a>
+          </li>
+
+          <li class="SBClicks">
+            <a class="nav-link" [routerLink]="['/Info']" routerLinkActive="active">زندگی نامه</a>
+          </li>
+
+          <li class="SBClicks">
+            <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">کار ها</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link SBClicks" [routerLink]="['/MyStudents']" routerLinkActive="active">هنرجو ها</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link SBClicks" [routerLink]="['/']" routerLinkActive="active">تماس</a>
+          </li>
+
+
+
+        </ul>
+
+
+      </div>
+    </ng-template>
+
+    <!-- <div class="d-flex flex-row-reverse"> -->
+
+
+    <!-- </div> -->
+
+    <div class="btn btn-light" id="smallSwitchId">
+      <span class="switch switch-sm">
+        <label for="switch-sm" style="font-size: .8rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">English</label>
+        <input type="checkbox" class="switch" id="switch-sm" (click)="checkLang()" />
+        <label for="switch-sm" style="font-weight: bold">فارسی</label>
+      </span>
+    </div>
+
+  </nav>
+</header>
+
+<!-- </div> -->

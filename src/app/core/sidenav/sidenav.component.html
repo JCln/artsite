@@ -1,0 +1,54 @@
+<div class="container-fluid  justify-content-end">
+  <div class="row col-sm-3 col-md-1 fixed-top" style="margin-top:8rem; padding-left:2.7rem;" id="button-toggler">
+    <div class=" justify-content-start ">
+      <i (click)="openNav()" class="fa fa-align-left btn btn-info"></i>
+
+    </div>
+  </div>
+</div>
+
+
+<aside id="mySidebar" class="sidebar sidebarTopHeight">
+  <a href="javascript:void(0)" class="closebtn sidebarTopHeight SBClicks" (click)="closeNav()">&times;</a>
+
+  <a class="nav-link SBClicks" [routerLink]="['/WPage']" routerLinkActive="active" (click)="closeNav()">
+    <i><img src="../../../assets/siteLogo2.jpg" style="width: 3rem; height: 3rem;"></i>
+  </a>
+
+  <a class="nav-link SBClicks" [routerLink]="['/Info']" routerLinkActive="active" (click)=closeNav()>
+    <i>{{ variable.checkTotalLangV ? 'زندگی نامه' : 'Biography'}}</i>
+  </a>
+
+  <a class="nav-link SBClicks" [routerLink]="['/']" routerLinkActive="active" (click)=closeNav()>
+    <i>
+      {{ variable.checkTotalLangV ? 'کارها' : 'WorkShops'}}
+    </i>
+  </a>
+
+  <a class="nav-link SBClicks" [routerLink]="['/MyStudents']" routerLinkActive="active" (click)=closeNav()>
+    <i>
+      {{ variable.checkTotalLangV ? 'هنرجو ها' : 'My Students'}}
+    </i>
+  </a>
+  <a class="nav-link SBClicks" [routerLink]="['/']" routerLinkActive="active" (click)=closeNav()>
+    <i>{{ variable.checkTotalLangV ? 'تماس' : 'Contact'}}
+    </i>
+  </a>
+
+  <!-- <a class="nav-link" [routerLink]= "['/login']"  routerLinkActive="active">
+        <i class="fa fa-sign-in"></i>
+      </aside> -->
+</aside>
+
+
+<!-- <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="logout()">LogOff {{displayName}}</a>
+            </li>
+
+            <li *ngIf="isLoggedIn" routerLinkActive="active">
+              <a [routerLink]="['/callProtectedApi']">‍‍Call Protected Api</a>
+            </li>
+
+            <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/protectedPage']">Protected Page</a>
+            </li> -->

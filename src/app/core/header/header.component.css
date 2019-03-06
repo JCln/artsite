@@ -1,0 +1,218 @@
+body {
+  font-weight: 600;
+}
+
+/* .flex-row-reverse {
+  width: 16rem;
+} */
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (max-width: 576px) {
+  #Home {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #GuitarHistory {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #Videos {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #PracticeVideos {
+    width: 36rem;
+  }
+}
+
+@media only screen and (max-width: 405px) {
+  .navbar-brand {
+    justify-content: center;
+    flex: auto;
+    text-align: center;
+    padding: 0;
+  }
+  #smallSwitchId {
+    width: 100%;
+  }
+
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  padding: 1rem;
+  /* margin: 0 20px; */
+  display: inline-block;
+
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  height: 5px;
+  display: inline-block;
+  background-color: #777;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+
+.dropdown-menu {
+  height: 8rem;
+  width: 8rem;
+}
+
+.dropdown-item {
+  /* padding: 15px; */
+  border-radius: 100px;
+  margin: 3px;
+  width: 3rem;
+  height: 3rem;
+}
+
+.text-color-size {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.header-text-full {
+  padding-top: 20rem;
+}
+
+#header-text {
+  color: #d9524a;
+  font-size: 2rem;
+}
+
+#Videos {
+  width: 100%;
+}
+
+
+
+.t-margin-top {
+  margin-top: 3rem;
+}
+
+
+.titleNames-margin {
+  margin-top: 4rem;
+}
+
+.carousel-inner {
+  margin-top: 1rem;
+}
+
+.carousel-item {
+  width: 43rem;
+  /* margin-top: 18rem; */
+}
+
+
+
+#practiceVideos {
+  height: 30rem;
+  width: 100%;
+}
+
+.carousel-next-prev-display {
+  display: block;
+}
+
+.font-size-text {
+  font-size: 1.2rem;
+}
+
+.text-aligment {
+  text-align: right;
+}
+
+@media only screen and (max-width: 576px) {
+  #se-to-TP {
+    position: absolute;
+    width: 36rem;
+    min-height: 30rem;
+  }
+}
+
+.history-card {
+  background: #323232;
+}
+
+.history-card-title {
+  text-align: center;
+  background: #6863ce;
+  padding: 1rem 1rem;
+}
+
+@media only screen and (max-width: 770px) {
+  .history-card-body {
+    margin-bottom: 2rem;
+  }
+}
+
+.history-card-body {
+  padding: 0 2rem;
+  font-size: 1.2rem;
+}
+
+.history-card-button {
+  background: #6863ce;
+  border-radius: 0.8rem;
+  color: white;
+  /* margin-left: 13rem; */
+  border: #6863ce;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.history-card-button:hover {
+  box-shadow: 0 0.1rem 0.1rem 0 #6863ce, 0.1rem 0.1rem #6863ce;
+}
+
+#brand-logo {
+  height: 4rem;
+  width: 4rem;
+  /* padding: 5px; */
+}
+
+@media only screen and (max-width: 800px) {
+  #brand-logo {
+    padding: 5px;
+  }
+}
